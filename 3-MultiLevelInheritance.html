@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        function Person() {
+            this.type = 'Person';
+        }
+
+        Person.prototype.sayHello = function () {
+            console.log('Hello World!');
+        };
+
+        function Employee(id) {
+            this.id = id;
+        }
+        Employee.prototype = new Person();
+        Employee.prototype.constructor = Employee; // fix the constructor
+        Employee.prototype.printid = function () {
+            console.log(this.id);
+        };
+
+        console.log('Is type a property of Person.prototype?', Person.prototype.hasOwnProperty('type'));
+        console.log('Is type a property of Person?', Person.hasOwnProperty('type'));
+
+
+
+        var p = new Person();
+        p.sayHello();
+        console.log(p.constructor);
+        var chris = new Employee(23);
+        chris.printid();
+        console.log(chris.constructor);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Prototypal Inheritance</title>
+    <script>
+
+
+
+        // 3 attributes of an object --> prototype, classname, extensible
+
+        // Object.create
+        var obj = { type: 'Person', sayHello: function () { console.log('Hello World!'); } };
+
+        var x = Object.create(obj); // x, prototype attribute --> reference to the parent obj
+
+        console.log(x.type);
+        obj.type = 'Employee';
+        console.log(x.type);
+
+        console.log(Object.getPrototypeOf(x));
+        console.log(Object.getPrototypeOf(obj));
+
+        // Literal
+        var y = {
+            address: {
+
+            }
+        }; // Object.prototype is the parent of all objects created using an object literal or
+        // an Object constructor
+
+        console.log(Object.getOwnPropertyNames(Object.prototype));
+
+        console.log(y.toString());
+        console.log(typeof y);
+
+        var arr = [1,2,3];
+        var parent_arr = Object.getPrototypeOf(arr);
+        console.log(parent_arr === Array.prototype);
+        console.log(arr.toString());
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

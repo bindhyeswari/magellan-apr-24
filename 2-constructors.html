@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        function Person() {
+            this.type = 'Person';
+        }
+
+        var rashmika = new Person;
+        var chris = new Person();
+
+        console.log(rashmika.hasOwnProperty('type'));
+
+        // creates a new object and sets this prototype attribute of the object to <function>.prototype
+        // invokes Person and sets the this keyword to the newly created object
+        // return the new object
+
+        /*var x = Object.create(Person.prototype);
+        Person.call(x);*/
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
