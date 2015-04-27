@@ -8,6 +8,7 @@
         function Person() {
             this.type = 'Person';
         }
+        Person.info = 'data'; // static property
 
         Person.prototype.sayHello = function () {
             console.log('Hello World!');
@@ -18,7 +19,7 @@
         }
         Employee.prototype = new Person();
         Employee.prototype.constructor = Employee; // fix the constructor
-        Employee.prototype.printid = function () {
+        Employee.prototype.printid = function () { // instance property
             console.log(this.id);
         };
 
